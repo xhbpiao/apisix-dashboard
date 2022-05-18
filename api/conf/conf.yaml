@@ -71,13 +71,13 @@ conf:
 
 authentication:
   secret:
-    secret              # secret for jwt token generation.
+    mico-admin              # secret for jwt token generation.
                         # NOTE: Highly recommended to modify this value to protect `manager api`.
                         # if it's default value, when `manager api` start, it will generate a random string to replace it.
   expire_time: 3600     # jwt token expire time, in second
   users:                # yamllint enable rule:comments-indentation
-    - username: admin   # username and password for login `manager api`
-      password: admin
+    - username: mico-admin   # username and password for login `manager api`
+      password: mico-admin
     - username: user
       password: user
 
@@ -117,7 +117,7 @@ plugins:                          # plugin list (sorted in alphabetical order)
   - response-rewrite
   - serverless-post-function
   - serverless-pre-function
-  # - skywalking
+  - skywalking
   - sls-logger
   - syslog
   - tcp-logger
